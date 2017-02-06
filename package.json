@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "PORT=3001 NOCACHE=true nodemon server.js"
   },
   "author": "",
   "license": "ISC",
@@ -16,5 +17,8 @@
     "method-override": "^2.3.7",
     "nunjucks": "^3.0.0",
     "volleyball": "^1.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }
