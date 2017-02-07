@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Category:{{category.name}} </h1>
+	{% for product in products %}
+	<ul>
+		<li> {{product.name}} </li>
+	</ul>
+	{% endfor %}
+{% endblock %}

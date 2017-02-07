@@ -2,10 +2,33 @@
 <html>
 <head>
 	<title>Acme Products Categories Baby</title>
+	<link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
 </head>
 <body>
-	{%  block content %}
-	{% endblock %}
+<div class='container'>
+	<UL class='nav nav-tabs'>
+		<li><a href="/">Home</a></li>
+		<li><a href="/categories">Categories</a></li>
 
+	</UL>
+	<div class='row'>
+		<div class="col-sm-6">
+		{%  block content %}
+		{% endblock %}
+		</div>
+		<div class="col-sm-6">
+			<h2> Data </h2>
+			<div class='well'>
+				Database he
+			</div>
+
+		</div>
+		
+	</div>
+</div>
+	
+
+
+	
 </body>
 </html>
