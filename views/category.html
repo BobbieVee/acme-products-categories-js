@@ -1,10 +1,25 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<h1>Category:{{category.name}} </h1>
+<h1>Category: {{category.name}} </h1>
+<a href="/categories"> &#60 All Categories</a>
+	<div class='well'>
+		<form action='/categories/{{category.id}}/product' method='post'>
+			<label>Add a Product</label>
+			<input class='form-control' name="name">
+			<button class='btn btn-primary' style='margin-top: 10px'>Save</button>
+		</form>
+		
+	</div>
 	{% for product in products %}
-	<ul>
-		<li> {{product.name}} </li>
+	<ul class='list-group'>
+		<li class='list-group-item'> {{product.name}} 
+			<form method='post' action='/categories/{{category.id}}/products/{{product.id}}?_method=delete'>
+				<button class='btn btn-danger'>Delete</button>
+				
+			</form>
+
+		</li>
 	</ul>
 	{% endfor %}
 {% endblock %}

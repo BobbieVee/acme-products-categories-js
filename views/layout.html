@@ -7,8 +7,8 @@
 <body>
 <div class='container'>
 	<UL class='nav nav-tabs'>
-		<li><a href="/">Home</a></li>
-		<li><a href="/categories">Categories</a></li>
+		<li class="{{homeActive}}"><a href="/">Home</a></li>
+		<li class="{{catActive}}"><a href="/categories">Categories({{category.id}})</a></li>
 
 	</UL>
 	<div class='row'>
@@ -19,7 +19,8 @@
 		<div class="col-sm-6">
 			<h2> Data </h2>
 			<div class='well'>
-				Database he
+			<a href="/categories/reset"><button style='margin-bottom: 10px' class='btn btn-warning'>Reset</button></a> 
+				<pre>{{db | dump(2) }}</pre>
 			</div>
 
 		</div>

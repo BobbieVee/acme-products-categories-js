@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<h2>All Categories</h2>
+<h2>All Acme Triathlon Categories</h2>
 <div class='well'>
 	<form method='post' action='/categories'>
 		<label>Add a Category</label>
@@ -11,8 +11,13 @@
 </div>
 <div class='well'>
 {% for category in categories %}
-<ul>
-	<li> <a href="/categories/{{category.id}}">{{category.name}} </a> </li>
+<ul class='list-group'>
+	<li class='list-group-item'> <a href="/categories/{{category.id}}">{{category.name}} </a> 
+	<form class='pull-right' style='display:inline' method='post' action='/categories/{{category.id}}?_method=delete'>
+		<button class='btn btn-danger'>Delete</button>
+	</form>
+	<br clear='all'>
+	</li>
 </ul>
 {% endfor%}	
 </div>
