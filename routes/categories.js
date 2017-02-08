@@ -14,8 +14,7 @@ router.get('/categories', (req,res,next)=> {
 });
 
 router.get('/categories/reset', (req,res,next)=> {
-	console.log('reset')
-	db.reset();
+	db.seed();
 	res.redirect('/categories');
 });
 
@@ -35,6 +34,7 @@ router.post('/categories/:id/product', (req,res,next)=> {
 });
 
 router.delete('/categories/:id', (req,res,next)=> {
+	console.log('delete = ', req.params.id*1)
 	db.deleteCategory(req.params.id*1);
 	res.redirect('/categories');
 });
